@@ -1,0 +1,33 @@
+        Me0wzz-NKS kernel for Samsung Galaxy J5 (2016)
+
+This kernel supports J510F/N TouchWiz custom ROMs on the Korean
+SM-J510S/K/L variants running Android 6.0.1 (Marshmallow).
+
+FEATURES:
+
+ - F2FS (Flash-Friendly File System).
+ - Prima WLAN driver.
+ - Faux Sound Control.
+ - SELinux permissive mode.
+
+BUILDING AND INSTALLING:
+
+ - Build zImage and combine it with the ramdisk.
+
+ - Replace the required library files in /system/lib.
+
+ - Disable ro.support.securestorage in build.prop for WLAN and
+   Bluetooth support.
+
+CREDITS:
+
+  @Demicro
+  @NKS15
+  @gugu0das
+  @kykint
+  @whdghks913
+
+LICENSING:
+
+  See COPYING for the kernel licensing terms. Individual source files
+  retain their own copyright and license notices.
