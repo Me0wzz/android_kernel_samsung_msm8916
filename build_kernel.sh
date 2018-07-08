@@ -1,16 +1,17 @@
 #!/bin/bash
-# Me0wzz-NKS Kernel Build Script by NKS (nks15)
+# Kernel build script by Suhyuk Park (NKS, nks15)
+# + Contact @nks15 via Telegram if you have suggestions, bugs, etc.
 #
 # Me0wzz-NKS Kernel for SM-J510(K)(S)
-# + Contact me if you have suggestions, bug, etc.
+# By Me0wzz
 #
 
-echo "Me0wzz-NKS Kernel Build Script by NKS (nks15) Build and Edit by Me0wzz"
-echo " "
-echo "Me0wzz-NKS Kernel for SM-J510(K)(S) (Script 1.0)"
-echo "+ Contact me if you have suggestions, bug, etc."
+echo "###############################################"
+echo "Me0wzz-NKS Kernel by Me0wzz and for SM-J510(K)(S)"
+echo "Build script by Suhyuk Park (NKS, nks15)"
+echo "###############################################"
 
-# Set up toolchain if not exist, We are currently using @khadas's
+# Set up toolchain if not exist, I am currently using @khadas's!
 export TOOLCHAIN=/opt/toolchains
 export TOOLCHAIN_BUILD=android_prebuilts_gcc_linux-x86_arm_arm-eabi-4.8
 
@@ -21,12 +22,12 @@ if [ ! -e "$TOOLCHAIN/$TOOLCHAIN_BUILD" ]; then
    git clone https://github.com/khadas/android_prebuilts_gcc_linux-x86_arm_arm-eabi-4.8.git -b Vim $TOOLCHAIN/$TOOLCHAIN_BUILD
 fi
 
-# Set up basic things
+# Set up basic things.
 export ARCH=arm
 export LOCALVERSION=""
 export CROSS_COMPILE=$TOOLCHAIN/$TOOLCHAIN_BUILD/bin/arm-eabi-
 
-# Now let's build kernels
+# Now let's build kernels :)
 mkdir output
 make -C $(pwd) O=output msm8916_sec_defconfig VARIANT_DEFCONFIG=msm8916_sec_j5xlte_defconfig SELINUX_DEFCONFIG=selinux_defconfig
 make -j64 -C $(pwd) O=output
